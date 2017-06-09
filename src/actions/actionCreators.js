@@ -18,37 +18,17 @@ const requestWeather = weather => ({
   weather,
 });
 
-const receiveWeather = weather => ({
+const receiveWeather = (weather, json) => ({
   type: RECEIVE_WEATHER,
   weather,
-  list: JSON.data.children.map(child => child.data),
-  receivedAt: new Date().getTime(),
+  forecast: json,
+  receivedAt: Date.now(),
 });
 
-const fetchWeather = weather =>
+export const fetchWeather = weather =>
   (dispatch) => {
     dispatch(requestWeather(weather));
-    return fetch(`${API_URL}${CITY}${API_KEY}.json`)
+    return fetch(`${API_URL}${CITY}${API_KEY}`)
       .then(response => response.json())
       .then(json => dispatch(receiveWeather(weather, json)));
-  };
-
-const shouldFetchWeather = (state) => {
-  const forecast = state.list;
-  switch (forecast) {
-    case !forecast:
-      return true;
-    case forecast:
-      return false;
-    default:
-      return state;
-  }
-};
-
-export const fetchWeatherIfNeeded = weather =>
-  (dispatch, getState) => {
-    if (shouldFetchWeather(getState(), weather)) {
-      return dispatch(fetchWeather(weather));
-    }
-    return null;
   };

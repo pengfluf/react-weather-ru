@@ -3,8 +3,8 @@ import {
   RECEIVE_WEATHER } from './../constants';
 
 const initialState = {
-  fetching: false,
   forecast: {},
+  fetching: false,
 };
 
 const weather = (state = initialState, action) => {
@@ -17,9 +17,8 @@ const weather = (state = initialState, action) => {
     case RECEIVE_WEATHER:
       return {
         ...state,
+        forecast: action.forecast,
         fetching: false,
-        weather: action.weather,
-        lastUpdated: action.receivedAt,
       };
     default:
       return state;
