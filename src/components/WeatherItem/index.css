@@ -1,0 +1,36 @@
+.weather-item {
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+
+  padding-top: 20px;
+  padding-right: 5vw;
+  padding-bottom: 20px;
+  padding-left: 5vw;
+
+  outline: 1px dotted black;
+  background-color: rgba(144, 238, 144, 0.15);
+}
+
+.weather-item__left-column {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: center;
+}
+.weather-item__monthday {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.weather-item__icon {
+  max-height: 100%;
+}
+
+.weather-item__right-column {
+  min-width: 130px;
+  margin-left: auto;
+}

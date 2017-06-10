@@ -29,7 +29,9 @@ class App extends Component {
           <DateList
             weather={this.props.weather}
           />
-          <WeatherList />
+          <WeatherList
+            weather={this.props.weather}
+          />
         </div>
       );
     }
@@ -41,8 +43,8 @@ class App extends Component {
 }
 
 App.propTypes = {
-  actions: PropTypes.object,// eslint-disable-line react/forbid-prop-types
-  weather: PropTypes.object,// eslint-disable-line react/forbid-prop-types
+  actions: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  weather: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
 };
 
 const mapStateToProps = state => ({

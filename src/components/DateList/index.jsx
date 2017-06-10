@@ -66,7 +66,7 @@ class DateList extends Component {
 }
 
 DateList.propTypes = {
-  weather: PropTypes.object // eslint-disable-line react/forbid-prop-types
+  weather: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
 };
 
 export default DateList;

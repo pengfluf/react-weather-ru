@@ -1,4 +1,10 @@
 .date-list {
+  display: flex;
+
+  max-width: 600px;
+  margin-top: 25px;
   margin-right: auto;
   margin-left: auto;
+
+  justify-content: space-around;
 }
