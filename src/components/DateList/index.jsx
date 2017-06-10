@@ -52,8 +52,8 @@ class DateList extends Component {
               return (
                 <DateItem
                   key={item.dt}
-                  weekday={weekDay}
-                  monthday={monthDay}
+                  weekDay={weekDay}
+                  monthDay={monthDay}
                 />
               );
             })

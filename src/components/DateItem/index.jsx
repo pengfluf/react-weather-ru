@@ -5,14 +5,14 @@ import './index.css';
 
 const DateItem = props => (
   <div className="date-item">
-    <div className="date-item__weekday">{props.weekday}</div>
-    <div className="date-item__monthday">{props.monthday}</div>
+    <div className="date-item__weekday">{props.weekDay}</div>
+    <div className="date-item__monthday">{props.monthDay}</div>
   </div>
 );
 
 DateItem.propTypes = {
-  weekday: PropTypes.string.isRequired,
-  monthday: PropTypes.number.isRequired,
+  weekDay: PropTypes.string.isRequired,
+  monthDay: PropTypes.number.isRequired,
 };
 
 export default DateItem;

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './index.css';
 
 import WeatherItem from './../WeatherItem';
+import translit from './../../utils/translit';
 
 class WeatherList extends Component {
   render() {
@@ -11,6 +12,7 @@ class WeatherList extends Component {
     if (list) {
       return (
         <div className="weather-list">
+          <div className="city-name">{translit(this.props.weather.forecast.city.name)}</div>
           {
             list.map((item) => {
               let date = new Date(item.dt * 1000);
