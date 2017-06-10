@@ -4,7 +4,7 @@ import './index.css';
 
 const Weather = () => (
   <div className="weather-item">
-    Hello there I'm Weather
+    Hello there I am Weather
   </div>
 );
 

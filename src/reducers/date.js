@@ -1,6 +1,6 @@
 import { SET_DATE } from './../constants';
 
-const initialState = new Date().getTime();
+const initialState = Date.now();
 
 const date = (state = initialState, action) => {
   switch (action.type) {
