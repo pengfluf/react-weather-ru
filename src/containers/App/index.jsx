@@ -28,9 +28,11 @@ class App extends Component {
         <div className="app">
           <DateList
             weather={this.props.weather}
+            selectDate={this.props.actions.selectDate}
           />
           <WeatherList
             weather={this.props.weather}
+            date={this.props.date}
           />
         </div>
       );

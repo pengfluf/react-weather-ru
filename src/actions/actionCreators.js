@@ -10,7 +10,7 @@ import {
   API_UNITS,
   API_KEY } from './../constants';
 
-export const setDate = date => ({
+export const selectDate = date => ({
   type: SET_DATE,
   date,
 });
@@ -22,9 +22,7 @@ const requestWeather = weather => ({
 
 const receiveWeather = (weather, json) => ({
   type: RECEIVE_WEATHER,
-  weather,
   forecast: json,
-  receivedAt: Date.now(),
 });
 
 export const fetchWeather = weather =>

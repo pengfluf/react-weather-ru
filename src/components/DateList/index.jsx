@@ -8,6 +8,22 @@ import DateItem from './../DateItem';
 
 class DateList extends Component {
 
+  constructor() {
+    super();
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(event) {
+    event.preventDefault();
+    const monthDay = +event.target.innerHTML;
+    this.props.selectDate(monthDay);
+    // the same but with Date
+    // const msc = new Date().setDate(monthDay);
+    // const date = new Date(msc).getDate();
+    // this.props.selectDate(date);
+  }
+
   render() {
     const list = this.props.weather.forecast.list;
 
@@ -54,6 +70,7 @@ class DateList extends Component {
                   key={item.dt}
                   weekDay={weekDay}
                   monthDay={monthDay}
+                  handleClick={this.handleClick}
                 />
               );
             })
@@ -67,6 +84,7 @@ class DateList extends Component {
 
 DateList.propTypes = {
   weather: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  selectDate: PropTypes.func.isRequired,
 };
 
 export default DateList;

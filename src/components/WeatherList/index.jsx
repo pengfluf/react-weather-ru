@@ -6,15 +6,23 @@ import WeatherItem from './../WeatherItem';
 import translit from './../../utils/translit';
 
 class WeatherList extends Component {
+
   render() {
     const list = this.props.weather.forecast.list;
+    const selectedDate = this.props.date;
 
-    if (list) {
       return (
         <div className="weather-list">
           <div className="city-name">{translit(this.props.weather.forecast.city.name)}</div>
           {
-            list.map((item) => {
+            list.filter((item) => {
+              if (list && selectedDate) {
+                let monthDay = new Date(item.dt * 1000).getDate();
+                return selectedDate === monthDay;
+              }
+              return true;
+            })
+            .map((item) => {
               let date = new Date(item.dt * 1000);
 
               let hour = date.getHours();
@@ -37,7 +45,6 @@ class WeatherList extends Component {
           }
         </div>
       );
-    }
     return null;
   }
 }

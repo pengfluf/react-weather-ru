@@ -6,7 +6,7 @@ import './index.css';
 const DateItem = props => (
   <div className="date-item">
     <div className="date-item__weekday">{props.weekDay}</div>
-    <div className="date-item__monthday">{props.monthDay}</div>
+    <div onClick={props.handleClick} className="date-item__monthday">{props.monthDay}</div>
   </div>
 );
 

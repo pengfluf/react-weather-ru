@@ -5,6 +5,7 @@ import {
 const initialState = {
   forecast: {},
   fetching: false,
+  filter: '',
 };
 
 const weather = (state = initialState, action) => {
