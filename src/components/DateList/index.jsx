@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import uniqby from 'lodash.uniqby';
 
 import './index.css';
 
@@ -14,40 +15,45 @@ class DateList extends Component {
       return (
         <div className="date-list">
           {
-            list.map((item) => {
+            uniqby(list, (item) => {
+              const date = new Date(item.dt * 1000);
+              const monthDay = date.getDate();
+              return monthDay;
+            })
+            .map((item) => {
               let date = new Date(item.dt * 1000);
 
-              let weekday = date.getUTCDay();
-              let monthday = date.getUTCDate();
+              let weekDay = date.getDay();
+              let monthDay = date.getDate();
 
-              switch (weekday) {
+              switch (weekDay) {
                 case 0:
-                  weekday = 'ВС';
+                  weekDay = 'ВС';
                   break;
                 case 1:
-                  weekday = 'ПН';
+                  weekDay = 'ПН';
                   break;
                 case 2:
-                  weekday = 'ВТ';
+                  weekDay = 'ВТ';
                   break;
                 case 3:
-                  weekday = 'СР';
+                  weekDay = 'СР';
                   break;
                 case 4:
-                  weekday = 'ЧТ';
+                  weekDay = 'ЧТ';
                   break;
                 case 5:
-                  weekday = 'ПТ';
+                  weekDay = 'ПТ';
                   break;
                 default:
-                  weekday = 'СБ';
+                  weekDay = 'СБ';
                   break;
               }
               return (
                 <DateItem
                   key={item.dt}
-                  weekday={weekday}
-                  monthday={monthday}
+                  weekday={weekDay}
+                  monthday={monthDay}
                 />
               );
             })

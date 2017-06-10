@@ -14,7 +14,10 @@ import Loading from './../../components/Loading';
 class App extends Component {
 
   componentDidMount() {
+    const list = this.props.weather.forecast.list;
+
     this.props.actions.fetchWeather();
+    console.log(list);
   }
 
   render() {
