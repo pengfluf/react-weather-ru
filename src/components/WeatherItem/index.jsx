@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './index.css';
 
 const WeatherItem = props => (
-  <div className="col-12 col-md-6">
+  <div className="col-12 col-md-6 col-xl-4">
     <div className="weather-item">
       <div className="weather-item__hour">{props.hour}</div>
       <div className="weather-item__main">
