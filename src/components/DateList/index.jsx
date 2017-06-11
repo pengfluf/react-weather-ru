@@ -71,6 +71,7 @@ class DateList extends Component {
                   weekDay={weekDay}
                   monthDay={monthDay}
                   handleClick={this.handleClick}
+                  date={this.props.date}
                 />
               );
             })

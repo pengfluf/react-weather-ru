@@ -14,10 +14,12 @@ import Loading from './../../components/Loading';
 class App extends Component {
 
   componentDidMount() {
-    const list = this.props.weather.forecast.list;
-
-    this.props.actions.fetchWeather();
-    console.log(list);
+    this.props.actions.fetchWeather()
+    .then(
+      (response) => {
+        let date = new Date(response.forecast.list[0].dt * 1000).getDate();
+        this.props.actions.selectDate(date);
+      });
   }
 
   render() {
@@ -28,6 +30,7 @@ class App extends Component {
         <div className="app">
           <DateList
             weather={this.props.weather}
+            date={this.props.date}
             selectDate={this.props.actions.selectDate}
           />
           <WeatherList

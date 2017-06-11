@@ -5,32 +5,28 @@ import './index.css';
 
 const WeatherItem = props => (
   <div className="weather-item">
-    <div className="weather-item__left-column">
-      <div className="weather-item__monthday">
-        {props.monthDay}
-      </div>
+    <div className="weather-item__time">
       <div className="weather-item__hour">{props.hour}</div>
+    </div>
+    <div className="weather-item__main">
       <img
         src={`http://openweathermap.org/img/w/${props.icon}.png`}
         className="weather-item__icon"
         alt="ico"
       />
+      <div className="weather-item__temp">{Math.round(props.temp)} °C</div>
     </div>
-    <div className="weather-item__right-column">
-      <div className="weather-item__temp">{props.temp}°C</div>
-      <div className="weather-item__forecast">
+    <div className="weather-item__info">
+      <div className="weather-item__info-item">
         {
           props.forecast.charAt(0).toUpperCase() +
           props.forecast.slice(1)
         }
       </div>
-      <div className="weather-item__humidity">Влажность: {props.humidity}
-        {
-          props.humidity.toString().length < 3 ? '' : null
-        }
+      <div className="weather-item__info-item">Влажность: {props.humidity} %
       </div>
-      <div className="weather-item__pressure">Давление: {props.pressure}</div>
-      <div className="weather-item__wind">Ветер: {props.wind} м/с</div>
+      <div className="weather-item__info-item">Давление: {Math.round(props.pressure * 0.750064)} мм рт. ст.</div>
+      <div className="weather-item__info-item">Ветер: {Math.round(props.wind)} м/с</div>
     </div>
   </div>
 );

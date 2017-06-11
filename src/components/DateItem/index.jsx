@@ -6,7 +6,12 @@ import './index.css';
 const DateItem = props => (
   <div className="date-item">
     <div className="date-item__weekday">{props.weekDay}</div>
-    <div onClick={props.handleClick} className="date-item__monthday">{props.monthDay}</div>
+    <div
+      className={
+      props.date === props.monthDay ? 'date-item__monthday date-item__monthday--active' : 'date-item__monthday'
+    }
+      onClick={props.handleClick}
+    >{props.monthDay}</div>
   </div>
 );
 

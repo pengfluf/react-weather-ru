@@ -4,24 +4,20 @@
 
   margin-right: 10px;
 
-  align-items: center;
+  text-align: center;
 }
 
 .date-item:last-of-type {
   margin-right: 0;
 }
 
-.date-item:hover {
-}
-
-.date-item__weekday {
-}
-
 .date-item__monthday {
+  font-size: 18px;
   line-height: 35px;
 
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
+  padding-top: 5px;
 
   cursor: pointer;
   text-align: center;
@@ -30,9 +26,12 @@
 }
 
 .date-item__monthday:hover {
-  color: #2962ff;
-  background-color: rgba(3, 169, 244, 0.15);
+  text-decoration: underline;
+
+  background-color: rgba(251, 140, 0, 0.5);
 }
 
 .date-item__monthday--active {
+  color: black;
+  background-color: rgba(239, 83, 80, 0.7);
 }
