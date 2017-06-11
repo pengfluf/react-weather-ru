@@ -27,3 +27,9 @@
 
   animation: loading-spinner-animation 1s linear infinite;
 }
+
+@media (min-width: 576px) {
+  .loading-spinner {
+    left: 45vw;
+  }
+}
