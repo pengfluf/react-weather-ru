@@ -11,9 +11,11 @@
 }
 
 .weather-list__date {
-  font-size: 19px;
+  font-size: 22px;
+  font-weight: 700;
 
   margin-top: 7px;
+  margin-left: 4vw;
 }
 
 .weather-list-header__refresh {
@@ -47,6 +49,8 @@
 }
 
 .weather-list-header__lastupdated {
+  font-style: italic;
+
   margin-top: 10px;
 
   text-align: right;

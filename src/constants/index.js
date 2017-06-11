@@ -1,3 +1,4 @@
+export const API_HTTPS_PROXY = 'https://crossorigin.me/';
 export const API_URL = 'http://api.openweathermap.org/data/2.5/forecast?q=';
 export const API_CITY = 'Sankt-Peterburg,ru';
 export const API_LANG = '&lang=ru';
