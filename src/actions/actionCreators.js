@@ -4,7 +4,6 @@ import {
   SET_DATE,
   REQUEST_WEATHER,
   RECEIVE_WEATHER,
-  API_HTTPS_PROXY,
   API_CITY,
   API_URL,
   API_LANG,
@@ -29,7 +28,7 @@ const receiveWeather = (weather, json) => ({
 export const fetchWeather = weather =>
   (dispatch) => {
     dispatch(requestWeather(weather));
-    return fetch(`${API_HTTPS_PROXY}${API_URL}${API_CITY}${API_LANG}${API_UNITS}${API_KEY}`)
+    return fetch(`${API_URL}${API_CITY}${API_LANG}${API_UNITS}${API_KEY}`)
       .then(response => response.json())
       .then(json => dispatch(receiveWeather(weather, json)));
   };
