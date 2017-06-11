@@ -1,4 +1,4 @@
-#How to start
+# How to start
 ```
 npm i
 npm start
