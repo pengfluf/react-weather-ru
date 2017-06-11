@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import 'bootstrap/dist/css/bootstrap-grid.css';
 import 'normalize.css';
 import './index.css';
 
@@ -28,19 +29,21 @@ class App extends Component {
     if (list) {
       return (
         <div className="app">
-          <DateList
-            weather={this.props.weather}
-            date={this.props.date}
-            selectDate={this.props.actions.selectDate}
-          />
-          <WeatherList
-            weather={this.props.weather}
-            date={this.props.date}
-          />
+          <div className="container-fluid">
+            <DateList
+              weather={this.props.weather}
+              date={this.props.date}
+              selectDate={this.props.actions.selectDate}
+            />
+            <WeatherList
+              weather={this.props.weather}
+              date={this.props.date}
+              fetchWeather={this.props.actions.fetchWeather}
+            />
+            </div>
         </div>
       );
     }
-
     return (
       <Loading />
     );
@@ -50,6 +53,7 @@ class App extends Component {
 App.propTypes = {
   actions: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   weather: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  date: PropTypes.number.isRequired,
 };
 
 const mapStateToProps = state => ({

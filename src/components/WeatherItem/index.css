@@ -3,24 +3,20 @@
   flex-direction: row;
 
   padding-top: 20px;
-  padding-right: 3vw;
+  padding-right: 2vw;
   padding-bottom: 20px;
-  padding-left: 3vw;
+  padding-left: 2vw;
 
-  outline: 1px dotted black;
-  background-color: rgba(144, 238, 144, 0.15);
+  border-top: 1px solid rgba(128, 128, 128, 0.3);
+  background-image: linear-gradient(180deg, rgba(255,255,255,0) 60%, #fff),linear-gradient(70deg, rgba(219, 237, 255, 0.4) 32%, rgba(235, 255, 240, 0.4));
 
   align-items: center;
   justify-content: space-between;
 }
 
-.weather-item__time {
-  display: flex;
-
-  align-items: center;
-}
-
 .weather-item__hour {
+  font-size: 17px;
+
   min-width: 16px;
 }
 .weather-item__main {
@@ -31,6 +27,10 @@
 
 .weather-item__temp {
   font-size: 20px;
+}
+
+.weather-item__info {
+  margin-left: 5px;
 }
 
 .weather-item__info-item {

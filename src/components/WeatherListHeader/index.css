@@ -1,0 +1,53 @@
+.weather-list-header {
+  margin-bottom: 5px;
+}
+
+.weather-list-header__city-name {
+  font-size: 23px;
+
+  margin-bottom: 15px;
+
+  text-align: center;
+}
+
+.weather-list__date {
+  font-size: 19px;
+
+  margin-top: 7px;
+}
+
+.weather-list-header__refresh {
+  display: block;
+
+  margin-left: auto;
+  padding: 5px 10px;
+
+  cursor: pointer;
+  text-align: right;
+
+  border: 2px solid black;
+  border-radius: 5px;
+  outline: none;
+  background-color: transparent;
+}
+
+.weather-list-header__refresh:hover {
+  background-color: rgba(100, 181, 246, 0.4);
+}
+
+.weather-list-header__refresh:active,
+.weather-list-header__refresh:focus {
+  color: black;
+  background-color: white;
+}
+
+.weather-list-header__refresh--fetching {
+  color: gray;
+  border-color: gray;
+}
+
+.weather-list-header__lastupdated {
+  margin-top: 10px;
+
+  text-align: right;
+}

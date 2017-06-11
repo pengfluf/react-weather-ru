@@ -25,13 +25,7 @@
   border-radius: 50%;
 }
 
-.date-item__monthday:hover {
-  text-decoration: underline;
-
-  background-color: rgba(251, 140, 0, 0.5);
-}
-
 .date-item__monthday--active {
-  color: black;
-  background-color: rgba(239, 83, 80, 0.7);
+  color: #2962ff;
+  background-color: rgba(25, 118, 210, 0.15);
 }

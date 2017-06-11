@@ -86,6 +86,7 @@ class DateList extends Component {
 DateList.propTypes = {
   weather: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   selectDate: PropTypes.func.isRequired,
+  date: PropTypes.number.isRequired,
 };
 
 export default DateList;

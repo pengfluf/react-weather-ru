@@ -19,6 +19,12 @@ const weather = (state = initialState, action) => {
         ...state,
         forecast: action.forecast,
         fetching: false,
+        lastUpdated: new Date().toLocaleString('ru',
+          {
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+          }),
       };
     default:
       return state;
